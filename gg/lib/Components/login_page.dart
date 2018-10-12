@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gg/UI/background_image.dart';
 import 'package:gg/UI/gg_logo.dart';
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
 
 class LoginPage extends StatefulWidget {
   @override
@@ -12,9 +15,12 @@ class LoginPage extends StatefulWidget {
 final usernameTextController = new TextEditingController();
 final passwordTextController = new TextEditingController();
 bool isButtonDisabled = true;
+<<<<<<< HEAD
 bool infoExists;
 var color = Color.fromRGBO(30, 30, 30, 1.0);
 var activeColor = Color.fromRGBO(0, 150, 255, 1.0);
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
 
 class _LoginPage extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
@@ -55,6 +61,7 @@ class _LoginPage extends State<LoginPage> {
     }
   }
 
+<<<<<<< HEAD
   void error() {
     setState(() {
       return [
@@ -116,6 +123,21 @@ class _LoginPage extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+=======
+  @override
+  Widget build(BuildContext context) {
+    loginButtonPressed() {
+      if (isButtonDisabled == true) {
+        return null;
+      } else if (isButtonDisabled == false) {
+        return () {
+          print("LOGGED IN");
+          print(isButtonDisabled);
+        };
+      }
+    }
+
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
       backgroundColor: Color.fromRGBO(23, 23, 23, 1.0),
@@ -129,6 +151,7 @@ class _LoginPage extends State<LoginPage> {
               padding: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0.0),
               child: new Column(
                 children: <Widget>[
+<<<<<<< HEAD
                   new Theme(
                     data: new ThemeData(
                       primaryColor: activeColor,
@@ -168,11 +191,39 @@ class _LoginPage extends State<LoginPage> {
                           ),
                         ),
                       ),
+=======
+                  new TextField(
+                    controller: usernameTextController,
+                    autocorrect: false,
+                    style: new TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(5, 5, 10, 1.0),
+                      hintText: "Username or Email",
+                      hintStyle: new TextStyle(
+                        color: Color.fromRGBO(170, 170, 170, 1.0),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 5.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(2.0),
+                          borderSide: BorderSide(
+                              style: BorderStyle.solid,
+                              width: 1.0,
+                              color: Color.fromRGBO(0, 150, 255, 1.0))),
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                     ),
                   ),
                   new Divider(
                     height: 35.0,
                   ),
+<<<<<<< HEAD
                   new Theme(
                     data: new ThemeData(
                       primaryColor: activeColor,
@@ -207,6 +258,34 @@ class _LoginPage extends State<LoginPage> {
                           ),
                         ),
                       ),
+=======
+                  new TextField(
+                    controller: passwordTextController,
+                    obscureText: true,
+                    autocorrect: false,
+                    style: new TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromRGBO(5, 5, 10, 1.0),
+                      hintText: "Password",
+                      hintStyle: new TextStyle(
+                        color: Color.fromRGBO(170, 170, 170, 1.0),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 5.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(2.0),
+                          borderSide: BorderSide(
+                              style: BorderStyle.solid,
+                              width: 1.0,
+                              color: Color.fromRGBO(0, 150, 255, 1.0))),
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                     ),
                   ),
                   new Center(
@@ -215,10 +294,14 @@ class _LoginPage extends State<LoginPage> {
                         child: new Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+<<<<<<< HEAD
                             new Container(
                               height: 60.0,
                               width: 140.0,
                               child: new FlatButton(
+=======
+                            new FlatButton(
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(2.0),
                               ),
@@ -236,6 +319,7 @@ class _LoginPage extends State<LoginPage> {
                               disabledColor: Color.fromRGBO(137, 145, 151, 1.0),
                               color: Color.fromRGBO(0, 150, 255, 1.0),
                               onPressed: loginButtonPressed(),
+<<<<<<< HEAD
                               //padding: EdgeInsets.fromLTRB(35.0, 15.0, 35.0, 15.0),
                             ),
                         ),
@@ -246,6 +330,15 @@ class _LoginPage extends State<LoginPage> {
                               height: 60.0,
                               width: 140.0,
                               child: new FlatButton(
+=======
+                              padding:
+                                  EdgeInsets.fromLTRB(35.0, 15.0, 35.0, 15.0),
+                            ),
+                            new SizedBox(
+                              width: 20.0,
+                            ),
+                            new FlatButton(
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(2.0),
                               ),
@@ -264,9 +357,15 @@ class _LoginPage extends State<LoginPage> {
                               onPressed: () {
                                 Navigator.of(context).pushNamed('/SignUpPage');
                               },
+<<<<<<< HEAD
                               //padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
                             ),
                         ),
+=======
+                              padding:
+                                  EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
+                            ),
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                           ],
                         )),
                   ),
@@ -306,14 +405,22 @@ class _LoginPage extends State<LoginPage> {
           ),
           new Center(
             child: Container(
+<<<<<<< HEAD
               width: 300.0,
               height: 60.0,
               //margin: EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 0.0),
+=======
+              margin: EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 0.0),
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
               child: new FlatButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(2.0),
                 ),
+<<<<<<< HEAD
                 //padding: EdgeInsets.only(bottom: 15.0, top: 15.0),
+=======
+                padding: EdgeInsets.only(bottom: 15.0, top: 15.0),
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                 disabledColor: Color.fromRGBO(78, 105, 204, 1.0),
                 color: Color.fromRGBO(78, 105, 204, 1.0),
                 onPressed: () {

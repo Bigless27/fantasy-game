@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -44,6 +45,8 @@ Map<dynamic, dynamic> orderedPosts = {};
 Map<dynamic, dynamic> sortedMap;
 Map<dynamic, dynamic> userInfo = {};
 File profilePic;
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
 
 class ProfilePage extends StatefulWidget {
   _ProfilePage createState() => new _ProfilePage();
@@ -51,6 +54,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePage extends State<ProfilePage> {
   @override
+<<<<<<< HEAD
   void initState() {
     super.initState();
     _fetchCurrentUser();
@@ -449,10 +453,228 @@ class _ProfilePage extends State<ProfilePage> {
                                       Icons.description,
                                       size: 25.0,
                                       color: Colors.white,
+=======
+  Widget build(BuildContext context) {
+    return Scaffold(
+        resizeToAvoidBottomPadding: false,
+        backgroundColor: Color.fromRGBO(23, 23, 23, 1.0),
+        bottomNavigationBar: new Theme(
+          data: new ThemeData(
+            canvasColor: Color.fromRGBO(5, 5, 10, 0.9),
+            primaryColor: Color.fromRGBO(0, 150, 255, 1.0),
+            textTheme: new TextTheme(
+              caption: new TextStyle(
+                color: Color.fromRGBO(170, 170, 170, 1.0),
+                fontSize: 12.0,
+              ),
+            ),
+          ),
+          child: new BottomNavigationBar(
+            currentIndex: 4,
+            type: BottomNavigationBarType.fixed,
+            fixedColor: Color.fromRGBO(0, 150, 255, 1.0),
+            items: [
+              BottomNavigationBarItem(
+                icon: new Icon(
+                  Icons.home,
+                ),
+                title: new Text(
+                  "Home",
+                  style: new TextStyle(
+                    fontSize: 12.0,
+                    fontFamily: "Century Gothic",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: new Icon(
+                  Icons.search,
+                  size: 25.0,
+                ),
+                title: new Text(
+                  "Search",
+                  style: new TextStyle(
+                    fontSize: 12.0,
+                    fontFamily: "Century Gothic",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: new Icon(
+                  IconData(0xe900, fontFamily: "Trophy"),
+                ),
+                title: new Text(
+                  "Tournaments",
+                  style: new TextStyle(
+                    fontSize: 12.0,
+                    fontFamily: "Century Gothic",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: new Icon(
+                  Icons.chat,
+                ),
+                title: new Text(
+                  "Messages",
+                  style: new TextStyle(
+                    fontSize: 12.0,
+                    fontFamily: "Century Gothic",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: new Icon(
+                  IconData(0xe971, fontFamily: "Profile"),
+                  size: 25.0,
+                ),
+                title: new Text(
+                  "Me",
+                  style: new TextStyle(
+                    fontSize: 12.0,
+                    fontFamily: "Century Gothic",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        body: new CustomScrollView(
+          slivers: <Widget>[
+            new SliverAppBar(
+              backgroundColor: Colors.transparent,
+              leading: new Container(),
+              expandedHeight: 190.0,
+              elevation: 0.0,
+              flexibleSpace: new FlexibleSpaceBar(
+                background: new Container(
+                //  color: Colors.blue,
+                  child: new Column(
+                    children: <Widget>[
+                      new Container(
+                        height: 160.0,
+                        child: new Stack(
+                          alignment: Alignment.bottomCenter,
+                          fit: StackFit.expand,
+                          children: <Widget>[
+                            new Image.asset(
+                              "assets/background.png",
+                              fit: BoxFit.cover,
+                            ),
+                            new Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                new CircleAvatar(
+                                  radius: 50.0,
+                                  backgroundColor:
+                                      Color.fromRGBO(0, 150, 255, 1.0),
+                                  child: CircleAvatar(
+                                    backgroundImage: new NetworkImage("https://i.imgur.com/BoN9kdC.png"),
+                                    radius: 45.0,
+                                    backgroundColor: Colors.white,
+                                  ),
+                                ),
+                                new Container(
+                                  margin:
+                                      EdgeInsets.only(top: 2.0, bottom: 3.0),
+                                  child: new Text(
+                                    "Ninja",
+                                    style: new TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "Century Gothic",
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      new Container(
+                        alignment: Alignment.center,
+                        child: new Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            new Container(
+                              width: 60.0,
+                              child: new Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  new Container(
+                                    child: new Text(
+                                      "100",
+                                      style: new TextStyle(
+                                        color:
+                                            Color.fromRGBO(170, 170, 170, 1.0),
+                                        fontFamily: "Century Gothic",
+                                        fontSize: 25.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  new Container(
+                                    margin:
+                                        EdgeInsets.only(top: 4.0, left: 4.0),
+                                    child: new Text(
+                                      "Posts",
+                                      style: new TextStyle(
+                                        color:
+                                            Color.fromRGBO(170, 170, 170, 1.0),
+                                        fontFamily: "Century Gothic",
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
+                            ),
+                            new Container(
+                              margin: EdgeInsets.only(left: 25.0, right: 25.0),
+                              width: 60.0,
+                              child: new Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  new Container(
+                                    child: new Text(
+                                      "1M",
+                                      style: new TextStyle(
+                                        color:
+                                            Color.fromRGBO(170, 170, 170, 1.0),
+                                        fontFamily: "Century Gothic",
+                                        fontSize: 25.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  new Container(
+                                    margin:
+                                        EdgeInsets.only(top: 4.0, left: 4.0),
+                                    child: new Text(
+                                      "Followers",
+                                      style: new TextStyle(
+                                        color:
+                                            Color.fromRGBO(170, 170, 170, 1.0),
+                                        fontFamily: "Century Gothic",
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
+                                    ),
+                                  ),
+                                ],
+                              ),
+<<<<<<< HEAD
                             ],
                           ),
                         ),
@@ -574,10 +796,43 @@ class _ProfilePage extends State<ProfilePage> {
                                           ),
                                         ),
                                       ],
+=======
+                            ),
+                            new Container(
+                              width: 60.0,
+                              child: new Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  new Container(
+                                    child: new Text(
+                                      "50",
+                                      style: new TextStyle(
+                                        color:
+                                            Color.fromRGBO(170, 170, 170, 1.0),
+                                        fontFamily: "Century Gothic",
+                                        fontSize: 25.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  new Container(
+                                    margin: EdgeInsets.only(top: 4.0),
+                                    child: new Text(
+                                      "Following",
+                                      style: new TextStyle(
+                                        color:
+                                            Color.fromRGBO(170, 170, 170, 1.0),
+                                        fontFamily: "Century Gothic",
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                                     ),
                                   ),
                                 ],
                               ),
+<<<<<<< HEAD
                               new IconButton(
                                 padding: EdgeInsets.only(right: 10.0),
                                 icon: new Icon(
@@ -967,5 +1222,118 @@ class _PostList extends State<PostList> {
         childCount: postCount,
       ),
     );
+=======
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            new SliverList(
+              delegate: new SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return new Container(
+                    padding: EdgeInsets.only(bottom: 10.0),
+                    margin: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 0.0),
+                    alignment: Alignment.center,
+                    decoration: new BoxDecoration(
+                      boxShadow: [
+                        new BoxShadow(
+                            blurRadius: 4.0,
+                            color: Color.fromRGBO(0, 0, 0, 0.5),
+                            offset: new Offset(0.0, 4.0)),
+                      ],
+                      borderRadius: new BorderRadius.circular(20.0),
+                      color: Color.fromRGBO(23, 23, 23, 1.0),
+                      border: new Border.all(
+                        width: 1.0,
+                        color: Color.fromRGBO(40, 40, 40, 1.0),
+                      ),
+                    ),
+                    child: new Container(
+                      child: new Column(
+                        children: <Widget>[
+                          new Row(
+                            //mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              new Container(
+                                padding: EdgeInsets.only(top: 2.0, left: 2.0),
+                                child: new CircleAvatar(
+                                  radius: 20.0,
+                                  backgroundColor:
+                                      Color.fromRGBO(0, 150, 255, 1.0),
+                                  child: CircleAvatar(
+                                    radius: 18.0,
+                                    backgroundColor: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              new Expanded(
+                                child: new Container(
+                                  padding: EdgeInsets.only(left: 2.0),
+                                  child: new Text(
+                                    "Ninja",
+                                    style: new TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "Century Gothic",
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              new Container(
+                                padding: EdgeInsets.only(right: 15.0),
+                                child: new Text(
+                                  "4h",
+                                  style: new TextStyle(
+                                    color: Color.fromRGBO(170, 170, 170, 1.0),
+                                    fontSize: 13.0,
+                                    fontFamily: "Avenir",
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          new Container(
+                            margin: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 0.0),
+                            child: new Text(
+                                "Looking for someone who wants to play duos with me on Fortnite",
+                                style: new TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: "Avenir",
+                                  fontSize: 17.0,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ),
+                          new Container(
+                            margin: EdgeInsets.only(top: 5.0),
+                            child: new Container(
+                                //color: Colors.white,
+                                ),
+                            height: 120.0,
+                            width: 200.0,
+                            decoration: new BoxDecoration(
+                                borderRadius: new BorderRadius.circular(2.0),
+                                border: new Border.all(
+                                  width: 2.0,
+                                  color: Color.fromRGBO(40, 40, 40, 1.0),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ));
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
   }
 }

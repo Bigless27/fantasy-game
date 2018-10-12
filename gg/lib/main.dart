@@ -5,7 +5,10 @@ import 'package:gg/components/login_page.dart';
 
 void main() {
   runApp(MaterialApp(
+<<<<<<< HEAD
     debugShowCheckedModeBanner: false,
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
     title: "GG",
     theme: ThemeData(
       primaryColor: Color.fromRGBO(0, 150, 255, 1.0),
@@ -22,5 +25,8 @@ void main() {
   ));
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025

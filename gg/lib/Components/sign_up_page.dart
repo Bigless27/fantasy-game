@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
 
 class SignUpPage extends StatefulWidget {
   _SignUpPage createState() => new _SignUpPage();
 }
 
+<<<<<<< HEAD
 String email = emailTextController.text.toLowerCase().trim();
 String username = usernameTextController.text.toLowerCase().trim();
 String password = passwordTextController.text.trim();
 bool usernameExists;
 bool emailExists;
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
 final usernameTextController = new TextEditingController();
 final emailTextController = new TextEditingController();
 final passwordTextController = new TextEditingController();
 bool isButtonDisabled = true;
 bool notVisible = true;
+<<<<<<< HEAD
 final RegExp nameExp = RegExp(r'^[A-Za-z0-9 ]+$');
 final CollectionReference documentReference =
     Firestore.instance.collection("Users");
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
 
 class _SignUpPage extends State<SignUpPage> {
   @override
@@ -32,9 +41,15 @@ class _SignUpPage extends State<SignUpPage> {
   }
 
   signUpButton() {
+<<<<<<< HEAD
     if (usernameTextController.text.length > 3 &&
         passwordTextController.text.length > 5 &&
         emailTextController.text.contains("@")) {
+=======
+    if (usernameTextController.text != "" &&
+        passwordTextController.text != "" &&
+        emailTextController.text != "") {
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
       setState(() {
         isButtonDisabled = false;
         print(isButtonDisabled);
@@ -47,6 +62,7 @@ class _SignUpPage extends State<SignUpPage> {
     }
   }
 
+<<<<<<< HEAD
   void _initialize(String user) async {
     Map<String, dynamic> initialData = <String, dynamic>{
       "email": email,
@@ -108,6 +124,8 @@ class _SignUpPage extends State<SignUpPage> {
     }
   }
 
+=======
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
   @override
   Widget build(BuildContext context) {
     signUpButtonPressed() {
@@ -115,7 +133,12 @@ class _SignUpPage extends State<SignUpPage> {
         return null;
       } else if (isButtonDisabled == false) {
         return () {
+<<<<<<< HEAD
           _register();
+=======
+          print("SIGNED UP");
+          print(isButtonDisabled);
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
         };
       }
     }
@@ -187,6 +210,7 @@ class _SignUpPage extends State<SignUpPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 new TextFormField(
+<<<<<<< HEAD
                   // keyboardType: TextInputType.text,
                   autovalidate: true,
                   controller: usernameTextController,
@@ -200,6 +224,13 @@ class _SignUpPage extends State<SignUpPage> {
                       return "Username must contain alphanumeric characters only";
                     } else if (usernameExists == true) {
                       return "Username is taken";
+=======
+                  autovalidate: true,
+                  controller: usernameTextController,
+                  validator: (text) {
+                    if (text.isNotEmpty && text.length < 4) {
+                      return "Username must contain at least 4 characters";
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                     }
                   },
                   autocorrect: false,
@@ -230,6 +261,7 @@ class _SignUpPage extends State<SignUpPage> {
                   height: 25.0,
                 ),
                 new TextFormField(
+<<<<<<< HEAD
                   keyboardType: TextInputType.emailAddress,
                   autovalidate: true,
                   controller: emailTextController,
@@ -240,6 +272,13 @@ class _SignUpPage extends State<SignUpPage> {
                       return "Email is not valid";
                     } else if (emailExists == true) {
                       return "Email is already being used";
+=======
+                  autovalidate: true,
+                  controller: emailTextController,
+                  validator: (text) {
+                    if (text.isNotEmpty && !text.contains("@")) {
+                      return "Email is not valid";
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                     }
                   },
                   autocorrect: false,
@@ -273,7 +312,11 @@ class _SignUpPage extends State<SignUpPage> {
                   controller: passwordTextController,
                   autovalidate: true,
                   validator: (text) {
+<<<<<<< HEAD
                     if (text.trim().isNotEmpty && text.trim().length < 6) {
+=======
+                    if (text.isNotEmpty && text.length < 6) {
+>>>>>>> c056af465ff9ad3f4a30f919850fe8df5d308025
                       return "Password must contain at least 6 characters";
                     }
                   },
